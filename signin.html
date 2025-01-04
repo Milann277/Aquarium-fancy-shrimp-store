@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Cora Aquatics</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f4f8;
+            margin: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            padding: 3rem 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #0288d1;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        label {
+            display: block;
+            margin: 1rem 0 0.5rem;
+            font-size: 1.1rem;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            background: #0288d1;
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            width: 100%;
+        }
+        .btn:hover {
+            background: #039be5;
+            transform: translateY(-3px);
+        }
+        /* Cancel Button Styling */
+        .cancel-btn {
+            background: #f4a261;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            width: 100%;
+            margin-top: 1rem;
+            border: none;
+        }
+        .cancel-btn:hover {
+            background: #e76f51;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Sign In</h2>
+            <form action="/signin" method="POST"> <!-- Update this action to match your backend route -->
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <button type="submit" class="btn">Sign In</button>
+                <button type="button" id="cancelBtn" class="cancel-btn">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const cancelBtn = document.getElementById('cancelBtn');
+
+        // Functionality for Cancel Button
+        cancelBtn.addEventListener('click', () => {
+            // Reset the form and potentially redirect to the home page
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            alert('Sign In process has been canceled.');
+            // Redirect to the main page (homepage)
+            window.location.href = "/";  // Ensure the redirect points to the home page
+        });
+    </script>
+
+</body>
+</html>
